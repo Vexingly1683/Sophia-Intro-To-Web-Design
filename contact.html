@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twin Cities Animal Rescue | Contact</title>
+</head>
+<body>
+  <header>
+    <img src="rescue-logo_c.png"
+         alt="Twin Cities Animal Rescue logo: a rounded green outline of an animal face above the organization name"
+         width="120" height="111">
+    <h1>Contact Us</h1>
+    <p>Get in touch about volunteering, fostering, or adoption</p>
+  </header>
+ 
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+ 
+  <main>
+    <section aria-label="Service Area and Hours">
+      <h2>Service Area &amp; Hours</h2>
+      <p>Placeholder: We serve Minneapolis, St. Paul, and the surrounding suburbs. Our
+      office is open Tuesday through Saturday, 10 a.m. to 5 p.m.</p>
+    </section>
+ 
+    <section aria-label="Interest Form">
+      <h2>Volunteer &amp; Foster Interest Form</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Your Information</legend>
+ 
+          <label for="full-name">Full Name</label><br>
+          <input type="text" id="full-name" name="full-name" required><br><br>
+ 
+          <label for="email">Email Address</label><br>
+          <input type="email" id="email" name="email" required><br><br>
+        </fieldset>
+ 
+        <fieldset>
+          <legend>Your Interest</legend>
+ 
+          <label for="interest-type">Interest Type</label><br>
+          <select id="interest-type" name="interest-type" required>
+            <option value="">-- Select One --</option>
+            <option value="volunteer">Volunteer</option>
+            <option value="foster">Foster</option>
+            <option value="adoption">Adoption Information</option>
+          </select><br><br>
+ 
+          <label for="availability">Availability</label><br>
+          <input type="text" id="availability" name="availability"
+                 placeholder="e.g., weekday evenings, weekends" required><br><br>
+ 
+          <label for="pet-experience">Experience With Pets</label><br>
+          <textarea id="pet-experience" name="pet-experience" rows="3"
+                    placeholder="Briefly describe your experience with animals"></textarea><br><br>
+ 
+          <label for="message">Short Message</label><br>
+          <textarea id="message" name="message" rows="4" maxlength="500"></textarea><br><br>
+        </fieldset>
+ 
+        <button type="submit">Submit Interest Form</button>
+      </form>
+    </section>
+  </main>
+ 
+  <footer>
+    <p>Twin Cities Animal Rescue | Placeholder Address, Minneapolis, MN | (555) 123-4567</p>
+  </footer>
+</body>
+</html>
