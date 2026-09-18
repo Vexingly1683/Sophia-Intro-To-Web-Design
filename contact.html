@@ -37,10 +37,10 @@
           <legend>Your Information</legend>
  
           <label for="name">Full Name</label><br>
-          <input type="text" id="name" name="name" required><br><br>
+          <input type="text" id="name" name="name"><br><br>
  
           <label for="email">Email Address</label><br>
-          <input type="email" id="email" name="email" required><br><br>
+          <input type="email" id="email" name="email"><br><br>
         </fieldset>
 
         <fieldset>
@@ -84,19 +84,22 @@
   <script>
     const interests = ['Adopt', 'Foster', 'Volunteer', 'Donate'];
 
-    window.addEventListener('DOMContentLoaded', function() {
-      interests.forEach(interest => {
-        const saved = localStorage.getItem('interest_' + interest);
-        if (saved === 'true') {
-          document.getElementById('interest_' + interest).checked = true;
-        }
-      });
-    });
-
     function saveInterests() {
       interests.forEach(interest => {
         const checkbox = document.getElementById('interest_' + interest);
-        localStorage.setItem('interest_' + interest, checkbox.checked);
+        if (checkbox) {
+          localStorage.setItem('interest_' + interest, checkbox.checked);
+        }
+      });
+    }
+
+    function loadInterests() {
+      interests.forEach(interest => {
+        const saved = localStorage.getItem('interest_' + interest);
+        const checkbox = document.getElementById('interest_' + interest);
+        if (checkbox && saved === 'true') {
+          checkbox.checked = true;
+        }
       });
     }
 
@@ -125,7 +128,7 @@
       
       if (isValid) {
         alert('Thank you! We will contact you soon.');
-        event.target.reset();
+        document.querySelector('form').reset();
         localStorage.clear();
       }
     }
@@ -146,9 +149,14 @@
       document.querySelectorAll('.error-message').forEach(err => err.remove());
     }
 
-    document.querySelector('form').addEventListener('submit', validateForm);
-    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-      cb.addEventListener('change', saveInterests);
+    window.addEventListener('DOMContentLoaded', function() {
+      loadInterests();
+      
+      document.querySelector('form').addEventListener('submit', validateForm);
+      
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', saveInterests);
+      });
     });
   </script>
 </body>
