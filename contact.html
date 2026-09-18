@@ -32,15 +32,15 @@
  
     <section aria-label="Interest Form">
       <h2>Volunteer &amp; Foster Interest Form</h2>
-<form id="volunteerForm" action="javascript:void(0)">
+      <form id="volunteerForm" novalidate>
         <fieldset>
           <legend>Your Information</legend>
  
           <label for="name">Full Name</label><br>
-<input type="text" id="email" name="email"><br><br>
+          <input type="text" id="name" name="name"><br><br>
  
           <label for="email">Email Address</label><br>
-          <input type="email" id="email" name="email"><br><br>
+          <input type="text" id="email" name="email"><br><br>
         </fieldset>
 
         <fieldset>
@@ -55,7 +55,7 @@
           <legend>Your Interest</legend>
  
           <label for="interest-type">Interest Type</label><br>
-          <select id="interest-type" name="interest-type" required>
+          <select id="interest-type" name="interest-type">
             <option value="">-- Select One --</option>
             <option value="volunteer">Volunteer</option>
             <option value="foster">Foster</option>
@@ -63,7 +63,7 @@
           </select><br><br>
  
           <label for="availability">Availability</label><br>
-          <input type="text" id="availability" name="availability" placeholder="e.g., weekday evenings, weekends" required><br><br>
+          <input type="text" id="availability" name="availability" placeholder="e.g., weekday evenings, weekends"><br><br>
  
           <label for="pet-experience">Experience With Pets</label><br>
           <textarea id="pet-experience" name="pet-experience" rows="3" placeholder="Briefly describe your experience with animals"></textarea><br><br>
@@ -149,12 +149,11 @@
 
     window.addEventListener('DOMContentLoaded', function() {
       loadInterests();
-      
       form.addEventListener('submit', validateForm);
-      
       document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
         cb.addEventListener('change', saveInterests);
       });
     });
   </script>
 </body>
+</html>
